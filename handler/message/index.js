@@ -86,7 +86,16 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                 * This is Premium feature.
                 * Check premium feature at https://trakteer.id/red-emperor/showcase or chat Author for Information.
                 */
-                client.reply(from, 'ehhh, what\'s that???', id)
+                const encryptMedia = isQuotedImage ? quotedMsg : message
+                const mediaData = await decryptMedia(encryptMedia, uaOverride)
+                const mimetypes = isQuotedImage ? quotedMsg.mimetype : mimetype
+                const base64img = `data:${mimetypes};base64,${mediaData.toString('base64')}`
+                const base64imgnobg = await removebg(base64img)
+                return client.sendImageAsSticker(from, base64imgnobg)
+                 .then(() => {
+                     client.reply(from, 'Here\'s your sticker')
+        console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
+     })
             } else if (args.length === 1) {
                 if (!isUrl(url)) { await client.reply(from, 'Maaf, link yang kamu kirim tidak valid. [Invalid Link]', id) }
                 client.sendStickerfromUrl(from, url).then((r) => (!r && r !== undefined)
@@ -234,6 +243,24 @@ module.exports = msgHandler = async (client = new Client(), message) => {
                 await client.reply(from, 'Tidak ada gambar! Untuk membuka cara penggnaan kirim #menu [Wrong Format]', id)
             }
             break
+                case 'memesticker':
+    if ((isMedia || isQuotedImage) && args.length >= 2) {
+        const top = arg.split('|')[0]
+        const bottom = arg.split('|')[1]
+        const encryptMedia = isQuotedImage ? quotedMsg : message
+        const mediaData = await decryptMedia(encryptMedia, uaOverride)
+        const getUrl = await uploadImages(mediaData, true)
+        const ImageBase64 = await meme.custom(getUrl, top, bottom)
+            client.sendImageAsSticker(from, ImageBase64)
+                .then(() => {
+                     client.reply(from, 'Here\'s your sticker')
+                    console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
+                })
+                .catch((err) => console.error(err))
+    } else {
+        await client.reply(from, 'Tidak ada gambar! Untuk membuka daftar perintah kirim #menu [Wrong Format]', id)
+    }
+    break
         case 'resi':
             if (args.length !== 2) return client.reply(from, 'Maaf, format pesan salah silahkan periksa menu. [Wrong Format]', id)
             const kurirs = ['jne', 'pos', 'tiki', 'wahana', 'jnt', 'rpx', 'sap', 'sicepat', 'pcp', 'jet', 'dse', 'first', 'ninja', 'lion', 'idl', 'rex']
@@ -313,7 +340,10 @@ module.exports = msgHandler = async (client = new Client(), message) => {
             * This is Premium feature.
             * Check premium feature at https://trakteer.id/red-emperor/showcase or chat Author for Information.
             */
-            client.reply(from, 'ehhh, what\'s that???', id)
+            if (!isGroupMsg) return client.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup! [Group Only]', id)
+            if (!isGroupAdmins) return client.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup! [Admin Group Only]', id)
+            const mentions = mentionList(sender.id, botNumber, groupMembers)
+            await client.sendTextWithMentions(from, `Heyy, ${pushname} is calling you !!!\n${mentions}`)
             break
         case 'botstat': {
             const loadedMsg = await client.getAmountOfLoadedMessages()
