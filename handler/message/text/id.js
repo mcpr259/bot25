@@ -22,8 +22,9 @@ Best regards, Yoga Sakti.`
 
 exports.textMenu = (pushname) => {
     return `
-Hi, ${pushname}! 👋️
-Berikut adalah beberapa fitur yang ada pada bot ini!✨
+Hi, ${pushname}! 👋️ 
+Selamat Datang di *MCPR_BOT*🤖 
+Berikut adalah beberapa fitur yang ada pada *MCPR_BOT*🤖!
 
 Sticker Creator:
 1. *!sticker*
@@ -36,7 +37,7 @@ Penggunaan:
 
 3. *!gifsticker* _<Giphy URL>_ / *!stickergif* _<Giphy URL>_
 Untuk merubah gif menjadi sticker (Giphy Only)
-Penggunaan: Kirim pesan dengan format *gifsticker https://media.giphy.com/media/JUvI2c1ddyzkwK4RlV/giphy.gif*
+Penggunaan: Kirim pesan dengan format *!gifsticker https://media.giphy.com/media/JUvI2c1ddyzkwK4RlV/giphy.gif*
 
 4. *!memesticker* _<teks atas>_ | _<teks bawah>_
 Untuk membuat sticker meme dengan teks atas dan bawah
@@ -79,7 +80,8 @@ Penggunaan: kirimkan lokasimu lalu balas/quote/reply lokasi yang kamu kirim deng
 5. *!donasi*
 menampilkan informasi donasi.
 
-Hope you have a great day!✨`
+Semoga Harimu Indah!✨
+Bot by *MCPR25*`
 }
 
 exports.textAdmin = () => {
@@ -105,9 +107,9 @@ Untuk menghapus pesan bot (balas pesan bot dengan !del)`
 
 exports.textDonasi = () => {
     return `
-Hai, terimakasih telah menggunakan bot ini, untuk mendukung bot ini kamu dapat membantu dengan berdonasi melalui link berikut:
-1. Saweria: https://saweria.co/yogasakti
-2. Trakteer: https://trakteer.id/red-emperor 
+Hai, terimakasih telah menggunakan *MCPR_BOT*🤖 , untuk mendukung bot ini kamu dapat membantu dengan berdonasi melalui link berikut:
+1. Saweria: https://saweria.co/mcpr25
+
 
 Donasi akan digunakan untuk pengembangan dan pengoperasian bot ini.
 
