@@ -57,8 +57,11 @@ Penggunaan: kirim pesan dengan format *!ig https://www.instagram.com/p/BPOd1vhDM
 
 4. *!twt* _<twitter post url>_
 Untuk mengunduh photo dan video dari Twitter.
-Penggunaan: kirim pesan dengan format *!twt https://twitter.com/ntsana_/status/1306108656887324672*
+Penggunaan: kirim pesan dengan format *!twt https://twitter.com/ntsana_/status/1306108656887324672*`
+}
 
+exports.textMenu = (pushname) => {
+    return `
 Lain-lain:
 1. *!translate* _<kode bahasa>_
 Untuk mengartikan pesan menjadi bahasa yang ditentukan.
