@@ -24,7 +24,7 @@ module.exports = msgHandler = async (client = new Client(), message) => {
         const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 
         // Bot Prefix
-        const prefix = '#'
+        const prefix = '!'
         body = (type === 'chat' && body.startsWith(prefix)) ? body : ((type === 'image' && caption) && caption.startsWith(prefix)) ? caption : ''
         const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
         const arg = body.trim().substring(body.indexOf(' ') + 1)
