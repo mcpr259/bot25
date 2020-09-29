@@ -67,7 +67,7 @@ This project require NodeJS v12.
 Clone this project
 
 ```bash
-> git clone https://github.com/YogaSakti/imageToSticker.git
+> git clone https://github.com/mcpr259/bot25.git
 > cd imageToSticker
 ```
 
