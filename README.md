@@ -68,7 +68,7 @@ Clone this project
 
 ```bash
 > git clone https://github.com/mcpr259/bot25.git
-> cd imageToSticker
+> cd bot25
 ```
 
 Install the dependencies:
