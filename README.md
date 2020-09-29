@@ -1,7 +1,7 @@
 <div align="center">
  
 # Whatsapp Bot - sticker creator
-[![Codefactor](https://www.codefactor.io/repository/github/yogasakti/imagetosticker/badge)](https://www.codefactor.io/repository/github/yogasakti/imagetosticker)
+[![Codefactor](https://www.codefactor.io/repository/github/mcpr259/bot25/badge)](https://www.codefactor.io/repository/github/mcpr259/bot25)
 <details>
  <summary>🥟 Help me!</summary>
 
